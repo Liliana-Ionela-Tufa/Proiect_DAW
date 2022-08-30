@@ -47,7 +47,7 @@ namespace Proiect_Asp
             });
             services.AddDbContext<ProiectContext>(options => options.UseSqlServer("Data Source=(localdb)\\ProjectsV13;Initial Catalog=Proiect_spital;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
 
-            //services.AddTransient<IPacientRepository, PacientRepository>();
+            services.AddTransient<IPacientRepository, PacientRepository>();
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<SeedDb>();
