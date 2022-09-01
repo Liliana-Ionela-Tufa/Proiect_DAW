@@ -7,9 +7,15 @@ namespace Proiect_Asp.Repositories
 {
     public class RepositoryWrapper : IRepositoryWrapper
     {
-        private readonly ProiectContext _context;
+        private readonly ProiectContext _context; // asta era null pana nu i dai new sau prin dep injection cum am facut mai jos 
         private IUserRepository _user;
         private IPacientRepository _pacient;
+
+
+        public RepositoryWrapper(ProiectContext context)
+        {
+            _context = context;
+        }
 
         public IUserRepository User
         {

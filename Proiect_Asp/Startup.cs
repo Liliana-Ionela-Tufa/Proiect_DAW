@@ -17,6 +17,7 @@ using Proiect_Asp.Entities.Constants;
 using Proiect_Asp.Entities.User;
 using Proiect_Asp.Repositories;
 using Proiect_Asp.Repositories.AuthorRepository;
+using Proiect_Asp.Repositories.SessionTokenRepository;
 using Proiect_Asp.Seed;
 using Proiect_Asp.Services;
 using System;
@@ -48,6 +49,8 @@ namespace Proiect_Asp
             services.AddDbContext<ProiectContext>(options => options.UseSqlServer("Data Source=(localdb)\\ProjectsV13;Initial Catalog=Proiect_spital;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
 
             services.AddTransient<IPacientRepository, PacientRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ISessionTokenRepository, SessionTokenRepository>();
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<SeedDb>();
