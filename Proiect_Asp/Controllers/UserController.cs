@@ -13,9 +13,9 @@ namespace Proiect_Asp.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IRepositoryWrapper _repository;
+        private readonly IUserRepository _repository;
 
-        public UserController(IRepositoryWrapper repository)
+        public UserController(IUserRepository repository)
         {
             _repository = repository;
         }

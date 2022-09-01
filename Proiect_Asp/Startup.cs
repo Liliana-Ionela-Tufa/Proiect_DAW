@@ -51,7 +51,6 @@ namespace Proiect_Asp
             services.AddTransient<IPacientRepository, PacientRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<ISessionTokenRepository, SessionTokenRepository>();
-            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<SeedDb>();
 

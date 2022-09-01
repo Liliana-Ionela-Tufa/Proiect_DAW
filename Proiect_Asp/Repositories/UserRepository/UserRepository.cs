@@ -11,7 +11,17 @@ namespace Proiect_Asp.Repositories
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
+        private IUserRepository _user;
+
         public UserRepository(ProiectContext context) : base(context) { }
+        public IUserRepository User
+        {
+            get
+            {
+                if (_user == null) _user = new UserRepository(_context);
+                return _user;
+            }
+        }
         public async Task<List<User>> GetAllUsers()
         {
             return await _context.Users.ToListAsync();

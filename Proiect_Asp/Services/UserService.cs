@@ -17,9 +17,9 @@ namespace Proiect_Asp.Services
     public class UserService : IUserService
     {
         private readonly UserManager<User> _userManager;
-        private readonly IRepositoryWrapper _repository;
+        private readonly IUserRepository _repository;
 
-        public UserService(UserManager<User> userManager, IRepositoryWrapper repository)
+        public UserService(UserManager<User> userManager, IUserRepository repository)
         {
             _userManager = userManager;
             _repository = repository;

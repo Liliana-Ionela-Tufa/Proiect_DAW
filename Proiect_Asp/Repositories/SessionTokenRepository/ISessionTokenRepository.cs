@@ -10,5 +10,6 @@ namespace Proiect_Asp.Repositories.SessionTokenRepository
     public interface ISessionTokenRepository : IGenericRepository<SessionToken>
     {
         Task<SessionToken> GetByJTI(string jti);
+        ISessionTokenRepository SessionToken { get; }
     }
 }

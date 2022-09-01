@@ -14,6 +14,22 @@ namespace Proiect_Asp.Repositories.SessionTokenRepository
     {
         //public SessionTokenRepository(ProiectContext context) : base(context) { }
         public readonly ProiectContext _context;
+        private ISessionTokenRepository _sessionToken;
+        private ProiectContext context;
+
+        public SessionTokenRepository(ProiectContext context)
+        {
+            this.context = context;
+        }
+
+        public ISessionTokenRepository SessionToken
+        {
+            get
+            {
+                if (_sessionToken == null) _sessionToken = new SessionTokenRepository(_context);
+                return _sessionToken;
+            }
+        }
 
         public void Create(SessionToken entity)
         {
